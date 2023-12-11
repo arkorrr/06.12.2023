@@ -1,14 +1,14 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 
-class Student
+class Contact
 {
     char* name;
     char* lastname;
     char* surname;
     char* phoneNumber;
 public:
-    Student() // construct by default
+    Contact() // construct by default
     {
         cout << "Constructor by default\n";
         name = nullptr;
@@ -16,7 +16,7 @@ public:
         surname = nullptr;
         phoneNumber = 0;
     }
-    Student(const char* Name, const char* LastName, const char* Surname,const char* HomeNumber) // construct by 2 param
+    Contact(const char* Name, const char* LastName, const char* Surname,const char* HomeNumber) // construct by 2 param
     {
         cout << "Constructor with parameters\n";
         name = new char[strlen(Name) + 1];
@@ -43,13 +43,13 @@ public:
         cout << "Surname: " << surname << endl;
         cout << "Phonenumber: " << phoneNumber << endl;
     }
-    ~Student()
+    ~Contact()
     {
         cout << "Destructor." << endl;
     }
 };
 
-void printStudents(Student* students, int size) 
+void printStudents(Contact* students, int size) 
 {
     for (int i = 0; i < size; i++) 
     {
@@ -61,17 +61,17 @@ int main()
 {
     int size = 1;
     
-    Student* students = new Student[size];
+    Contact* contact = new Contact[size];
 
-    students[0] = Student("Oleg", "Anat","Oleksandrovich", "0916084933");
+    contact[0] = Contact("Oleg", "Anat","Oleksandrovich", "0916084933");
 
 
     
   
  
-    printStudents(students, size);
+    printStudents(contact, size);
 
-    delete[] students;
+    delete[] contact;
     return 0;
 
 }
